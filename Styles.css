@@ -1,0 +1,343 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background-image: url(/Triatlon_def/imagenes/triat.jpg);
+
+}
+
+.title {
+    padding-top: 60px;
+    padding-bottom: 0px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 70px;
+    color: white;
+    text-align: center;
+}
+
+/* Estilos Container main */
+.container {
+    background-color:#afaaaa;
+    width: 75%;
+    height: 450px;
+    position: relative;
+    margin: 100px auto;
+    border: 1px solid rgb(173, 172, 169);
+    border-radius: 25px;
+    height: auto;
+    box-shadow: 0px 0px 60px 5px rgba(0, 0, 0, 0.4);
+
+
+}
+
+/* Estilos manu */
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-bottom: 1px solid #ccc;
+    margin: 5px;
+}
+
+.menu>.active {
+    color: rgb(135, 135, 189, 0.8);
+}
+
+/* i {color:black;}*/
+
+.menu button {
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    /* margin-right: 50px; */
+    font-size: 15px;
+    flex: 1;
+}
+
+.menu button:hover {
+    color: royalblue;
+}
+
+.menu .fa {
+    margin-right: 7px;
+}
+
+.menu button:hover .fa {
+    color: purple;
+}
+
+
+/* Estilos contenido EVENTOS */
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 5% 40px;
+    /* margin-left: 40px; */
+
+}
+
+.content-right img {
+    max-width: 350px;
+    min-width: 200px;
+    width: 92%;
+    margin: 5px;
+    border-radius: 18px;
+}
+
+.content-left {
+    /* flex-basis: 50%; */
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    text-align: center;
+    align-items: center;
+    margin-left: -9px;
+}
+
+.content-left p {
+    font-size: 15px;
+    padding: 30px;
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+.container-end_send button {
+    width: 180px;
+    display: block;
+    padding: 8px 5px;
+    border-radius: 20px;
+    /* text-decoration: none; */
+    background-color: darkkhaki;
+    color: black;
+    text-align: center;
+    /* margin-bottom: 20px; */
+    cursor: pointer;
+    border: 0px;
+    margin-left: 15px;
+    opacity: 0.5;
+}
+
+.container-end_send button:hover {
+    font-weight: bolder;
+}
+
+.container-end_send {
+    display: flex;
+    justify-content: space-around;
+    /* align-items: center; */
+    padding: 30px;
+
+}
+
+.container-end_send input {
+    color : red;
+    font-size: 20px;
+
+}
+
+.end-hour {
+    width: 30%;
+    height: 30px;
+    color: indigo;
+    border: none;
+    text-align: center;
+    margin: 0px 5px;
+}
+
+.end-hour:hover,
+.end-hour:focus {
+    color: black;
+    border-bottom: 1px solid rgb(85, 73, 53);
+}
+
+
+/* .send {
+    width: 90px;
+} */
+
+
+
+.content-right {
+    /* flex-basis: 50%; */
+    flex: 1;
+    text-align: center;
+}
+
+
+/* Eventos Pestanas */
+.tab-content {
+    margin: 10px;
+}
+
+.tab-content>div {
+    display: none;
+}
+
+.tab-content>.active {
+    display: block;
+}
+
+
+/* TAB REGISTRO */
+
+.user {
+    padding: 20px;
+    /* border-radius: 1px solid #ccc; */
+}
+
+.user h2 {
+    text-align: center;
+    margin: 10px;
+    color: darkblue;
+}
+
+/* BOTON REGISTRO */
+.send-form {
+    background-color: darkblue;
+    color: white;
+    cursor: pointer;
+    border: 0;
+    border-radius: 20px;
+    display: block;
+    /* margin: 20px auto; */
+    padding: 10px 7px;
+    width: 100%;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+
+    text-align: center;
+    opacity:0.3;
+}
+
+.send-form:hover {
+    color: royalblue;
+}
+
+
+/* FORMULARIO */
+
+.form-control {
+    margin-top: 15px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-control input {
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    padding-left: 20px;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    color: #776464;
+    font-weight: lighter;
+    -webkit-transition: .5s;
+    -moz-transition: .5;
+    transition: .5s;
+}
+
+.form-control button {
+    width: 80%;
+}
+
+input {
+    display: block;
+    height: 50px;
+    width: 70%;
+    margin: 0 auto;
+    border: none;
+}
+
+input::placeholder {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+}
+
+input:hover,
+input:focus {
+    color: purple;
+    outline: none;
+    border-bottom: 1px solid royalblue;
+}
+
+input placeholder {
+    color: purple;
+    position: relative;
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+
+}
+
+
+/* TABLA DE PARTICIPANTES INSCRITOS*/
+.container-tabla {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+    margin: 20px;
+}
+
+.container-tabla-titulo {
+    color: darkblue;
+    margin-bottom: 40px;
+}
+
+
+.tabla-main {
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+tbody>tr {
+    height: 30px;
+    transition: .5s;
+}
+
+tbody>tr:hover {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+tbody>.active {
+    background-color: greenyellow;
+}
+
+/* Clases de posicionamiento de participantes en eventos */
+tbody>.llegada {
+    background-color: rgb(89, 161, 60);
+}
+tbody>.corriendo {
+    background-color: rgb(91, 183, 211);
+}
+tbody>.descalificado {
+    background-color: rgb(236, 16, 16);
+}
+
+.container-tabla-seguimiento {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+    margin: 20px;
+    box-shadow: #c9c9ce 2px 2px 2px 2px;
+    border-radius: 15px 15px 0px 0px;
+}
+
+.oculto {
+    display: none;
+}

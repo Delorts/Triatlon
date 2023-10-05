@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&display=swap">
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+    <title>TRIATLON</title>
+</head>
+
+<body>
+    <h1 class="title">EVENTO TRIATLÓN 2022</h1>
+    <div class="container">
+        <!-- Botones de paginacion -->
+        <div class="menu">
+            <button class="active" tab="#registro"><i class="fa fa-solid fa-user"></i>Registro</button>
+            <button tab="#participantes"><i class="fa fa-solid fa-person-biking"></i>Participantes</button>
+            <button tab="#eventos"><i class="fa fa-solid fa-person-swimming"></i>Eventos</button>
+            <button tab="#seguimiento"><i class="fa fa-solid fa-chart-simple"></i>Seguimiento</button>
+        </div>
+
+        <div class="tab-content">
+            <div class="active user" id="registro">
+                <h2>Registro de Participantes</h2>
+                <form id="frm-registro">
+                    <div class="form-control">
+                        <!-- <label for="nombre">Nombre:</label> -->
+                        <input name="nombre" type="text" placeholder="Nombre">
+                    </div>
+                    <div class="form-control">
+                        <!-- <label for="cedula">C&eacute;dula:</label> -->
+                        <input name="cedula" maxlength="10" type="text" placeholder=" Cédula ">
+                    </div>
+                    <div class="form-control">
+                        <!-- <label for="municipio">Municipio:</label> -->
+                        <input name="municipio" type="text" placeholder=" Municipio ">
+                    </div>
+                    <div class="form-control">
+                        <!-- <label for="edad">Edad:</label> -->
+                        <input name="edad" maxlength="3" type="text" placeholder=" Edad ">
+                    </div>
+                    <div class="form-control">
+                        <button type="button" class="send-form" onclick="dataController.registro()">Inscripir
+                            Participante</button>
+                        <button class="oculto" id="limpiar-formulario" type="reset">-</button>
+                    </div>
+                </form>
+
+            </div>
+            <div id="participantes">
+                <div class="container-tabla">
+                    <div class="container-tabla-titulo">
+                        <h2>Tabla de participantes inscritos</h2>
+                    </div>
+                    <table class="tabla-main">
+                        <thead>
+                            <tr>
+                                <th>CÉDULA</th>
+                                <th>NOMBRE</th>
+                                <th>EDAD</th>
+                                <th>MUNICIPIO</th>
+                            </tr>
+                        </thead>
+                        <tbody id="data-participantes">
+                            <tr>
+                                <td colspan="4">No hay participantes</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="seguimiento">
+                <div class="container-tabla-seguimiento">
+                    <div class="container-tabla-titulo">
+                        <h2>Actualización Caminata</h2>
+                    </div>
+                    <table class="tabla_main">
+                        <thead>
+                            <tr>
+                                <th>CEDULA</th>
+                                <th>NOMBRE</th>
+                                <th>EDAD</th>
+                                <th>MUNICIPIO</th>
+                                <th>DISTANCIA</th>
+                                <th>TIEMPO</th>
+                                <th>HORA INICIO</th>
+                                <th>HORA LLEGADA</th>
+                            </tr>
+                        </thead>
+                        <tbody id="data-seguimiento-caminata">
+                            <tr>
+                                <td colspan="8">No ha iniciado</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="container-tabla-seguimiento">
+                    <div class="container-tabla-titulo">
+                        <h2>Actualización Ciclismo</h2>
+                    </div>
+                    <table class="tabla_main">
+                        <thead>
+                            <tr>
+                                <th>CEDULA</th>
+                                <th>NOMBRE</th>
+                                <th>EDAD</th>
+                                <th>MUNICIPIO</th>
+                                <th>DISTANCIA</th>
+                                <th>TIEMPO</th>
+                                <th>HORA INICIO</th>
+                                <th>HORA LLEGADA</th>
+                            </tr>
+                        </thead>
+                        <tbody id="data-seguimiento-ciclismo">
+                            <tr>
+                                <td colspan="8">No ha iniciado</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="container-tabla-seguimiento">
+                    <div class="container-tabla-titulo">
+                        <h2>Actualización Natacion</h2>
+                    </div>
+                    <table class="tabla_main">
+                        <thead>
+                            <tr>
+                                <th>CEDULA</th>
+                                <th>NOMBRE</th>
+                                <th>EDAD</th>
+                                <th>MUNICIPIO</th>
+                                <th>DISTANCIA</th>
+                                <th>TIEMPO</th>
+                                <th>HORA INICIO</th>
+                                <th>HORA LLEGADA</th>
+                            </tr>
+                        </thead>
+                        <tbody id="data-seguimiento-natacion">
+                            <tr>
+                                <td colspan="8">No ha iniciado</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="eventos">
+                <form id="frm-eventos">
+                    <!-- Caminata -->
+                    <div class="container-end_send">
+                        <input name="hora-evento" class="end-hour" type="text" placeholder=" HH:MM:SS ">
+                        <button type="button" onclick="dataController.registrarEvento('caminata')">Iniciar
+                            Triatlón</button>
+                    </div>
+                    <div class="content">
+                        <div class="content-left">
+                            <h1>Caminata 10K</h1> <!-- style="color:sandybrown;" -->
+                            <p>La caminata competitiva puede ser definida como el desplazamiento atlético del gesto de la Caminata Veloz Natural, especialmente nacida de un movimiento cotidiano de nuestra 
+                                vida y reglamentada por normas precisas como cada disciplina deportiva de competencia.</p>
+                        </div>
+                        <div class="content-right">
+                            <img src="imagenes/cam.jpg" alt="Caminata">
+                        </div>
+                    </div>
+
+                    <!-- Biking -->
+                    <div class="content">
+                        <div class="content-left">
+                            <h1>Ciclismo 30K</h1> <!-- style="color: seagreen;" -->
+                            <p>¿Que el ciclismo y en qué consiste?
+                                El ciclismo es un deporte simétrico que se practica con un elemento mecánico (bicicleta) que limita la postura del atleta que va comprendido entre los pedales, en los que encaja mediante unos tacos 
+                                de que dispone en las zapatillas, el sillín, sobre el que se sienta, y el manillar, en el que apoya las manos.</p>
+                            <!-- <div class="container-end_send">
+                                <input name="ciclismo" class="end-hour" type="text" placeholder=" HH:MM:SS ">
+                                <button type="button"
+                                    onclick="dataController.registrarEvento('ciclismo')">Aplicar</button>
+                            </div> -->
+                        </div>
+                        <div class="content-right">
+                            <img src="imagenes/ciclic.jpg" alt="Caminata">
+                        </div>
+                    </div>
+
+                    <!-- swim -->
+                    <div class="content">
+                        <div class="content-left">
+                            <h1>Natación 10K</h1> <!-- style="color: steelblue;" -->
+                            <p>Deporte o ejercicio que consiste en nadar; en las pruebas de natación se 
+                                compite en velocidad, en cualquiera de los cuatro estilos: braza, crol, espalda y mariposa.</p>
+                            <!-- <div class="container-end_send">
+                                <input name="natacion" class="end-hour" type="text" placeholder=" HH:MM:SS ">
+                                <button type="button"
+                                    onclick="dataController.registrarEvento('natacion')">Aplicar</button>
+                            </div> -->
+                        </div>
+                        <div class="content-right">
+                            <img src="imagenes/nadar.jpg" alt="Caminata">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="javasc/cont.js"></script>
+    <script src="javasc/dat.js"></script>
+    <script src="javasc/code.js"></script>
+</body>
+
+</html>
